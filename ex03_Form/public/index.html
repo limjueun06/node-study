@@ -12,17 +12,26 @@
         - 보안X, 데이터를 보내는 길이가 제한이 있다.
         - 데이터를 보내기 위해 쿼리스트링 문법 사용한다!
             ex) http://www.naver.com?키=값
+        - 검색어 검색시 or 간단한 데이터 전달 할때 사용
 
      전송 방식 2) post
+        - 데이터를 웹브라우저의 body에 담아 전달한다.
+        - 보안O, 데이터를 전달하는 길이에 제한이 없다.
+        - 회원가입, 로그인, 게시글 작성 등 CRUD와 관련된 내용을 작성할 때 사용한다
 -->
-
 
     <h3>get 방식</h3>
     <form action="/getKeyword" method="get">
         <input type="text" placeholder="검색어를 입력하세요" name="keyword">
         <input type="submit" value="검색"></input>
-
-
     </form>
+
+    <hr>
+    <h3>post 방식</h3>
+    <form action="/postLogin" method="post">
+        <input type="text" plcehoder="아이디를 입력하세요" name="id">
+        <input type="password" plcehoder="비밀번호를 입력하세요" name="pw">
+        <input type="submit" value="로그인">
+    </form>    
 </body>
 </html>

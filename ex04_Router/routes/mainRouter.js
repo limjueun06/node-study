@@ -14,6 +14,16 @@ router.get('/', (req, res)=>{
     res.sendFile(file_path + '/main.html')
 })
 
+// 4. 추가 페이지 연결 작업 하기!
+router.get('/soccer', (req, res)=>{
+    console.log('축구페이지')
+    res.sendFile(file_path + '/soccer.html')
+})
+
+router.get('/baseball', (req, res)=>{
+    console.log('야구페이지')
+    res.sendFile(file_path + '/baseball.html')
+})
 
 // 3. (반드시 사용!!!) 만들어진 기능을 추출하기 위한 작업!
 module.exports = router

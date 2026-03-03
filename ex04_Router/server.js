@@ -12,9 +12,12 @@
 
 // 3. 내가 만든 나의 router 모듈 가져오기!
 const mainRouter = require('./routes/mainRouter')
+const minorRouter = require('./routes/minorRouter')
 
 // 4. express가 가지고 있는 미들웨어를 사용하여 라우터 연결!
 app.use('/', mainRouter)
+app.use('/minor', minorRouter) // => /minor
+
 
 // 2. port번호 셋팅하기
     app.set('port', process.env.PORT || 3000)

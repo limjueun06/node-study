@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>동아 MX 3기 {{nick}}</h1>
+
+    <!-- nunjucks를 사용한 문법 
+         사용법 1) node에서(server) 데이터를 보내고 받는 방법
+         => res.render(응답할 페이지의 이름, 보내줄 데이터) 
+         => 보내줄 데이터 양식 -> 중괄호 두개 사용! (중첩해서), 안쪽에 띄워줄 데이터 변수명 작성!
+         사용법 2) 선언과 표현을 분리하여 사용하는 방법
+         => 중괄호 안에 % 두개 사용 - 선언 방법
+         => 중괄호 안에 변수이름 - 데이터 표현  
+    -->
+     <!-- 1. 변수 선언 및 사용 -->
+      {% set num = 3 %}
+      <p>현재 num의 데이터는 ? {{num}}</p>
+
+      <!-- 2. 조건문 사용 -->
+       {% if num === 1 %}   
+            <p>{{num}}</p>
+       {% else %}
+            <p>{{num}}</p>
+       {% endif %}
+
+       <!-- 3. 반복문 사용 -->
+        {% set menu = ['순두부찌개', '햄버거', '돈까스'] %}
+
+        {% for i in menu%}
+            <p>{{i}}</p>
+        {% endfor%}
+</body>
+</html>

@@ -32,7 +32,7 @@ router.get('/:type', (req, res)=>{
             <table border="1">
                 <tr>
                     <td>탕수육</td>
-                    <td>군만두</td>
+                    <td>꿔바로우</td>
                 </tr>
             </table>
         `)

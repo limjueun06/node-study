@@ -1,5 +1,10 @@
 {
-  "name": "ex07_db",
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "express": "^5.2.1",
+    "nunjucks": "^3.2.4"
+  },
+  "name": "ex06_template",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,11 +14,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "chokidar": "^3.6.0",
-    "express": "^5.2.1",
-    "mysql2": "^3.19.0",
-    "nunjucks": "^3.2.4"
-  }
+  "type": "commonjs"
 }

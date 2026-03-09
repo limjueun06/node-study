@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>Join</h1>
+    <form action="/user/join" method="post">
+        <input type="text" placeholder="아이디를 입력하세요." name="id"><br>
+        <input type="password" placeholder="비밀번호를 입력하세요." name="pw"><br>
+        <input type="text" placeholder="닉네임을 입력하세요." name="nick">
+        <input type="submit" value="회원가입">
+    </form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+     <h1>동아 MX 3기 {{nick}}</h1>
+
+     <form action="/login" method="post">
+         <input type="text" name="user_nick" placeholder="닉네임을 입력하세요">
+         <button type="submit">확인</button>
+     </form>
+     
+     <!-- 4. 페이지 자체를 끼워 넣는 방법! (include) -->
+     {% include "refer.html" %}
+{% endblock %}

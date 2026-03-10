@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+     <form action="/user/select" method="get">
+        <input type="text" placeholder="검색할 아이디를 입력하시오" name="id">
+        <input type="submit" value="검색">
+    </form>
+    <button>
+        <a href="/user/selectAll">
+            전체검색
+        </a>
+    </button>
+{% endblock %}

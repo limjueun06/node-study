@@ -1,0 +1,23 @@
+<!-- 검색한 결과를 보여주는 공간 -->
+
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h3>회원정보 검색 결과</h3>
+
+    <table border="1">
+        <tr bgcolor="lightblue">
+            <th>아이디</th>
+            <th>닉네임</th>
+        </tr>
+
+        <!-- 반복되는 정보 -> 아이디와 닉네임 -> 반복문 안에 작성 -->
+        {% for i in rows %}
+        <tr>
+        <td>{{i.ID}}</td>
+        <td>{{i.NICK}}</td>
+        <tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

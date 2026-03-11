@@ -8,15 +8,20 @@
 <body>
     <!-- 공통으로 들어갈 디자인 -->
      <h1>
-        My Homepage 입니다.
+        {{userId}} Homepage 입니다.
      </h1>
 
      <p>
         <a href="/">메인</a>
-        <a href="/join">회원가입</a>
-        <a href="/login">로그인</a>
-        <a href="/delete">탈퇴</a>
-        <a href="/search">검색</a>
+
+         {% if userId %}
+         <a href="/delete">탈퇴</a>
+         <a href="/search">검색</a>
+         <a href="/user/logout">로그아웃</a>
+         {% else %}
+         <a href="/join">회원가입</a>
+         <a href="/login">로그인</a>
+         {% endif%}
      </p>
 
      <!-- 페이지별로 변경되는 부분 -->

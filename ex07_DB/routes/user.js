@@ -77,8 +77,23 @@ router.post('/login', (req,res)=>{
     conn.query(sql, [id,pw], (err, rows)=>{
         console.log('rows', rows)
         if(rows.length > 0){
-            // 로그인 성공
-            res.redirect('/')
+
+            // 로그인 성공했을 경우 세션값을 저장한 후 메인페이지로 이동
+            req.session.userId = id
+            req.session.isLogined = true
+            req.session.save((err)=>{
+                if(err){
+                    res.send(`
+                        <script>
+                        alert('오류가 발생했습니다. 다시 로그인 해주세요.')
+                        <script/>
+                        `)
+                } else {
+                     // 로그인 성공
+                    res.redirect('/')
+                }
+            })
+            
         } else{
             // 로그인 실패
             res.send(`
@@ -145,6 +160,22 @@ router.get('/selectAll', (req,res)=>{
         console.log("전체검색", rows)
         res.render('select', {rows:rows})
     })
+})
+
+// 로그아웃 기능
+router.get('/logout', (req,res)=>{
+    req.session.destroy((err)=>{
+        if(err){
+            res.send(`
+                <script>
+                alert('로그아웃 중 오류발생')
+                window.location.href="/"
+                </script>
+                `)
+        }
+    })
+    res.clearCookie('connect.sid')
+    res.redirect("/")
 })
 
 module.exports = router
